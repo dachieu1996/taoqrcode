@@ -13,7 +13,7 @@
                 <!-- /input-group -->
             </li>
             <li>
-                <a href="http://localhost:8888/taoqrcode/public/admin/danhsach"><i class="fa fa-qrcode"></i> Thông tin sản phẩm<span class="fa arrow"></span></a>
+                <a href="/admin/danhsach"><i class="fa fa-qrcode"></i> Thông tin sản phẩm<span class="fa arrow"></span></a>
                 <!-- /.nav-second-level -->
             </li>
         </ul>

@@ -37,7 +37,7 @@
                     </thead>
                     <tbody>
                     @foreach($sp_losx as $sp)
-                        <tr class="odd gradeX" align="center" onclick="document.location='http://localhost:8888/taoqrcode/public/admin/taoma/{{$sp->MaLo}}/{{$sp->MaSP}}'">
+                        <tr class="odd gradeX" align="center" onclick="document.location='/admin/taoma/{{$sp->MaLo}}/{{$sp->MaSP}}'">
                             <td>{{$sp->MaLo}}</td>
                             <td>{{$sp->MaSP}}</td>
                             <td>{{$sp->motsanpham->TenSP}}</td>
@@ -48,7 +48,7 @@
                             <td>{{$sp->NSX->format('d/m/Y')}}</td>
                             <td>{{$sp->HSD->format('d/m/Y')}}</td>
                             <td>{{$sp->SoLuong}}</td>
-                            <td><i class="fa fa-qrcode fa-fw"></i><a href="http://localhost:8888/taoqrcode/public/admin/taoma/{{$sp->MaLo}}/{{$sp->MaSP}}">Tạo Mã</a></td>
+                            <td><i class="fa fa-qrcode fa-fw"></i><a href="/admin/taoma/{{$sp->MaLo}}/{{$sp->MaSP}}">Tạo Mã</a></td>
 
                         </tr>
                     @endforeach
