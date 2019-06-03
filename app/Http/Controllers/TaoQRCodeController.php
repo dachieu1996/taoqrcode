@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 use QR_Code\QR_Code;
 use Illuminate\Support\Facades\Crypt;
-
+use Illuminate\Support\Facades\File;
 
 class TaoQRCodeController extends Controller
 {
