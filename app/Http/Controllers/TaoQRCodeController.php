@@ -53,9 +53,10 @@ class TaoQRCodeController extends Controller
     }
 
     public function getTaoMa($MaLo ,$MaSP){
-        // if(file_exists('upload'.DIRECTORY_SEPARATOR.'qrcode'.DIRECTORY_SEPARATOR.$MaLo.DIRECTORY_SEPARATOR.$MaSP)){
-        //     return redirect('admin/chitiet/'.$MaLo.'/'.$MaSP);
-        // }
+        if(file_exists('upload'.DIRECTORY_SEPARATOR.'qrcode'.DIRECTORY_SEPARATOR.$MaLo.DIRECTORY_SEPARATOR.$MaSP)){
+            rrmdir('upload'.DIRECTORY_SEPARATOR.'qrcode'.DIRECTORY_SEPARATOR.$MaLo.DIRECTORY_SEPARATOR.$MaSP);
+            //return redirect('admin/chitiet/'.$MaLo.'/'.$MaSP);
+        }
 
         // Tạo file MaLo
         $path_MaLo = public_path('upload'.DIRECTORY_SEPARATOR.'qrcode'.DIRECTORY_SEPARATOR.$MaLo);
@@ -153,6 +154,21 @@ class TaoQRCodeController extends Controller
         $directory ='upload/qrcode/'.$MaLo.'/'.$MaSP;
         $image=glob($directory .'/'.$MaDL.'/'.$STT.".png");
         return view('admin.taoqrcode.inma',['image'=>$image]);
+    }
+
+    function rrmdir($dir) {
+        if (is_dir($dir)) {
+            $objects = scandir($dir);
+            foreach ($objects as $object) {
+                if ($object != "." && $object != "..") {
+                    if (filetype($dir."/".$object) == "dir") 
+                        rrmdir($dir."/".$object); 
+                    else unlink   ($dir."/".$object);
+                }
+            }
+            reset($objects);
+            rmdir($dir);
+        }
     }
 }
 
