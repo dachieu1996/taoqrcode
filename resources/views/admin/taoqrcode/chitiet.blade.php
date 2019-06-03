@@ -8,7 +8,7 @@
                     <a href="/admin/danhsach" class="btn btn-default" style="background-color: #f7f7f7"><i class="fa fa-angle-left fa-fw"></i>QUAY LẠI</a>
                 </div>
                 <div class="col-lg-12">
-                    <h1 class="page-header">{{$TenSP}}</h1>
+                <h1 class="page-header">{{$TenSP}} - {{$MaLo}}</h1>
                 </div>
                 <!-- /.col-lg-12 -->
 

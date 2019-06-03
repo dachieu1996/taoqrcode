@@ -40,7 +40,16 @@ class TaoQRCodeController extends Controller
             else $image[$stt->MaDL] = array(null);
 
         }
-        return view('admin.taoqrcode.chitiet',['stt_losx'=>$stt_losx,'TenDL'=>$TenDL ,'image'=>$image,'TenSP'=>$TenSP]);
+        return view(
+            'admin.taoqrcode.chitiet',
+            [
+                'stt_losx'=>$stt_losx,
+                'TenDL'=>$TenDL ,
+                'image'=>$image,
+                'TenSP'=>$TenSP,
+                'MaLo' =>$MaLo
+            ]
+        );
     }
 
     public function getTaoMa($MaLo ,$MaSP){
