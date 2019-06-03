@@ -161,9 +161,7 @@ class TaoQRCodeController extends Controller
             $objects = scandir($dir);
             foreach ($objects as $object) {
                 if ($object != "." && $object != "..") {
-                    if (filetype($dir."/".$object) == "dir") 
-                        rrmdir($dir."/".$object); 
-                    else unlink   ($dir."/".$object);
+                    unlink($dir."/".$object);
                 }
             }
             reset($objects);
