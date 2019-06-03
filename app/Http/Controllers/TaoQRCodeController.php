@@ -53,9 +53,9 @@ class TaoQRCodeController extends Controller
     }
 
     public function getTaoMa($MaLo ,$MaSP){
-        if(file_exists('upload'.DIRECTORY_SEPARATOR.'qrcode'.DIRECTORY_SEPARATOR.$MaLo.DIRECTORY_SEPARATOR.$MaSP)){
-            return redirect('admin/chitiet/'.$MaLo.'/'.$MaSP);
-        }
+        // if(file_exists('upload'.DIRECTORY_SEPARATOR.'qrcode'.DIRECTORY_SEPARATOR.$MaLo.DIRECTORY_SEPARATOR.$MaSP)){
+        //     return redirect('admin/chitiet/'.$MaLo.'/'.$MaSP);
+        // }
 
         // Tạo file MaLo
         $path_MaLo = public_path('upload'.DIRECTORY_SEPARATOR.'qrcode'.DIRECTORY_SEPARATOR.$MaLo);
