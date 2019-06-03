@@ -54,7 +54,7 @@ class TaoQRCodeController extends Controller
 
     public function getTaoMa($MaLo ,$MaSP){
         if(file_exists('upload'.DIRECTORY_SEPARATOR.'qrcode'.DIRECTORY_SEPARATOR.$MaLo.DIRECTORY_SEPARATOR.$MaSP)){
-            $this->rrmdir('upload'.DIRECTORY_SEPARATOR.'qrcode'.DIRECTORY_SEPARATOR.$MaLo.DIRECTORY_SEPARATOR.$MaSP);
+            File::deleteDirectory('upload'.DIRECTORY_SEPARATOR.'qrcode'.DIRECTORY_SEPARATOR.$MaLo.DIRECTORY_SEPARATOR.$MaSP);
             //return redirect('admin/chitiet/'.$MaLo.'/'.$MaSP);
         }
 
@@ -156,17 +156,5 @@ class TaoQRCodeController extends Controller
         return view('admin.taoqrcode.inma',['image'=>$image]);
     }
 
-    public function rrmdir($dir) {
-        if (is_dir($dir)) {
-            $objects = scandir($dir);
-            foreach ($objects as $object) {
-                if ($object != "." && $object != "..") {
-                    unlink($dir."/".$object);
-                }
-            }
-            reset($objects);
-            rmdir($dir);
-        }
-    }
 }
 
